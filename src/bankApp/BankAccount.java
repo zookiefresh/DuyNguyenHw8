@@ -18,7 +18,7 @@ public class BankAccount {
     float balance;
     float interestRate;
     
-    BankAccount(String f_name, String l_name, String ssn, float open_balance){
+    BankAccount(String f_name, String l_name, String ssn, float open_balance) throws InvalidCustomerException{
         cust = new Customer(f_name, l_name, ssn);
         balance = open_balance;
         accountNumber = 999999999 + (long)(Math.random() * 999999999);

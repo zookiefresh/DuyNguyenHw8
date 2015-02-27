@@ -9,15 +9,16 @@ package bankApp;
  *
  * @author duy
  */
-public class InvalidCustomer extends Exception{
+public class InvalidCustomerException extends Exception{
     private String ssn;
     
-    InvalidCustomer(String ssn){
+    InvalidCustomerException(String ssn){
         this.ssn = ssn;
     }
     
     @Override
     public String getMessage(){
-        return "“Invalid SSN " + ssn;
+        return "Invalid SSN " + ssn;
     }    
 }
+

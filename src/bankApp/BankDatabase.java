@@ -18,7 +18,7 @@ public class BankDatabase {
     
     final int maxAccounts = 100;
     
-    BankDatabase(){
+    BankDatabase() throws InvalidCustomerException {
         allAccounts = new BankAccount[maxAccounts];
         numAccounts = 0;
     }

@@ -16,7 +16,7 @@ public class Customer {
     private String lastname;
     private String socialSecurityNumber;
     
-    Customer(String firstName, String lastName, String socialSecurityNumber){
+    Customer(String firstName, String lastName, String socialSecurityNumber) throws InvalidCustomerException {
         this.firstname = firstName;
         this.lastname = lastName;        
         
@@ -29,10 +29,10 @@ public class Customer {
         
     }
     
-    private static void checkSocial(String s){
+    private static void checkSocial(String s) throws InvalidCustomerException{
         if(!s.matches("\\d{3}-\\d{2}-\\d{4}")){
-            System.out.println("'"+ s 
-                    + "' seems to be an invalid social security number!");
+            InvalidCustomerException e = new InvalidCustomerException(s);
+            throw e;
         }
     }
     
