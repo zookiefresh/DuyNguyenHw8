@@ -23,7 +23,7 @@ public class BankDatabase {
         numAccounts = 0;
     }
     
-    void createCheckingAccount(String customerName, String ssn, float deposit){                
+    void createCheckingAccount(String customerName, String ssn, float deposit) throws InvalidCustomerException{                
         String[] name = customerName.split(" ");
         if(name.length == 2){           
             allAccounts[numAccounts] = new CheckingAccount(name[0], 
@@ -35,7 +35,7 @@ public class BankDatabase {
         }
     }
     
-    void createSavingAccount(String customerName, String ssn, float deposit){
+    void createSavingAccount(String customerName, String ssn, float deposit) throws InvalidCustomerException{
         String[] name = customerName.split(" "); 
         if(name.length == 2){       
             allAccounts[numAccounts] = new SavingsAccount(name[0], 

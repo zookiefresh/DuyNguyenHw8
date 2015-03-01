@@ -12,7 +12,7 @@ package bankApp;
 public class SavingsAccount extends BankAccount{    
    
     SavingsAccount(String firstName, String lastName, 
-            String socialSecurityNumber, float openingBalance){
+            String socialSecurityNumber, float openingBalance) throws InvalidCustomerException{
         
         super(firstName, lastName, socialSecurityNumber, openingBalance);
         this.interestRate = 0.05f;

@@ -12,7 +12,7 @@ package bankApp;
 public class CheckingAccount extends BankAccount {        
     static final float interestMin = 10000.0f;    
     
-    CheckingAccount(String first, String last, String ssn, float open_bal){
+    CheckingAccount(String first, String last, String ssn, float open_bal) throws InvalidCustomerException {
         super(first, last, ssn, open_bal);
         this.interestRate = 0.02f;
     }
