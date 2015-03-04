@@ -31,8 +31,7 @@ public class Customer {
     
     private static void checkSocial(String s) throws InvalidCustomerException{
         if(!s.matches("\\d{3}-\\d{2}-\\d{4}")){
-            InvalidCustomerException e = new InvalidCustomerException(s);
-            throw e;
+            throw new InvalidCustomerException(s);            
         }
     }
     

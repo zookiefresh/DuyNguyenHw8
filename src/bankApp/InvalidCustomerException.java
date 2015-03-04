@@ -9,6 +9,8 @@ package bankApp;
  *
  * @author duy
  */
+
+// Exception is derived from the throwable class 
 public class InvalidCustomerException extends Exception{
     private String ssn;
     
@@ -16,9 +18,13 @@ public class InvalidCustomerException extends Exception{
         this.ssn = ssn;
     }
     
+    InvalidCustomerException(){
+        this.ssn ="";
+    }    
+    
     @Override
     public String getMessage(){
-        return "Invalid SSN " + ssn;
+        return "Exception: Invalid SSN " + ssn;
     }    
 }
 
