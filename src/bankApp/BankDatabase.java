@@ -18,29 +18,39 @@ public class BankDatabase {
     
     final int maxAccounts = 100;
     
-    BankDatabase() throws InvalidCustomerException {
+    BankDatabase(){
         allAccounts = new BankAccount[maxAccounts];
         numAccounts = 0;
     }
     
-    void createCheckingAccount(String customerName, String ssn, float deposit) throws InvalidCustomerException{                
+    void createCheckingAccount(String customerName, String ssn, float deposit) {                
         String[] name = customerName.split(" ");
-        if(name.length == 2){           
-            allAccounts[numAccounts] = new CheckingAccount(name[0], 
-                    name[1], ssn, deposit);             
-             numAccounts++;
+        if(name.length == 2){
+            try{
+                allAccounts[numAccounts] = new CheckingAccount(name[0], 
+                        name[1], ssn, deposit);             
+                numAccounts++;
+            }            
+            catch (InvalidCustomerException e) {
+                System.out.println(e.getMessage());
+            }
         }
         else{
             System.out.println("Invalid name");
         }
     }
     
-    void createSavingAccount(String customerName, String ssn, float deposit) throws InvalidCustomerException{
+    void createSavingAccount(String customerName, String ssn, float deposit){
         String[] name = customerName.split(" "); 
-        if(name.length == 2){       
-            allAccounts[numAccounts] = new SavingsAccount(name[0], 
-                name[1], ssn, deposit);                
-            numAccounts++;
+        if(name.length == 2){
+            try{
+                allAccounts[numAccounts] = new SavingsAccount(name[0], 
+                    name[1], ssn, deposit);                
+                numAccounts++;
+            }            
+            catch (InvalidCustomerException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
     
